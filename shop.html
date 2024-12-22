@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+        .nav-list{
+            background-color: blanchedalmond;
+        }
+        h1{
+            color: aqua;
+            background: black;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.nav-list li {
+    flex: 1 1 calc(50% - 20px); /* Two items per row on larger screens */
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    text-align: center;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
+}
+
+.nav-list li img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.nav-list li h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+}
+
+.nav-list li:hover img {
+    transform: scale(1.1);
+}
+
+.nav-list li:hover h2 {
+    color: #f3ec78;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-list li {
+        flex: 1 1 calc(100% - 20px); /* Single column on smaller screens */
+    }
+}
+    </style>
+</head>
+<body>
+    <h1>Our products</h1>
+    <ul class="nav-list">
+        <li>
+            <a href="flats.html">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/shopsy-shoe/x/b/e/9-sopsybts-wht-nowry-white-original-imagjfsezhrh4kfq.jpeg?q=90&crop=false" alt="flats">
+                <h2>Flats and chappals</h2>
+            </a>
+        </li>
+        <li>
+            <a href="heel.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCEW-qIeBETisvBmmjkNeYdkggrGAHntqznQ&s" alt="Candles">
+                <h2>HEELS</h2>
+            </a>
+        </li>
+        <li>
+            <a href="scrunchies.html">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2021/9/YF/YM/LN/16557313/2.jpg" alt="Scrunchies">
+                <h2>Scrunchies</h2>
+            </a>
+        </li>
+        <li>
+            <a href="jewellery.html">
+                <img src="https://i.pinimg.com/736x/65/aa/48/65aa48c8aaa2d060a4497510ddb605f8.jpg" alt="Jewellery">
+                <h2>Jewellery</h2>
+            </a>
+        </li>
+        <li>
+            <a href="shoes.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsPKTUYW9ooEgpg2R7MHzqMfgB7iJIackeJg&s" alt="Lip Gloss">
+                <h2>SHOES</h2>
+            </a>
+        </li>
+    </ul>
+</body>
+</html>
