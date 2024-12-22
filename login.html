@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    flex-wrap: wrap;
+    background-color: rgb(140, 218, 222);
+    
+} 
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    
+} 
+h1{
+    color: red;
+}
+    </style>
+</head>
+<body style="background:url('https://files.oaiusercontent.com/file-Bj58LUM2TWZhapFRxHxjtu?se=2024-12-22T10%3A45%3A32Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dc9178bba-c8b0-46dc-b89d-5831dd159bd5.webp&sig=lDbAu%2BDphUzkR1ZN2BYuagJ8eRofT70saHCwC8Lqffw%3D') ">
+     <div class="login"><h1>Registration is mandatory in order to purchase any thing.</h1></div>
+          <h2>Login</h2>
+          <div class="container">
+          <form action="/login" method="POST">
+              <label for="login-email">Email:</label>
+              <input type="email" id="login-email" name="email" required>
+              
+            <label for="login-password">Password:</label>
+              <input type="password" id="login-password" name="password" required>
+  
+              <button type="submit">Login</button>
+          </form>
+          </div>
+          
+          <h2>Register</h2>
+          <div class="container2">
+
+          <form action="/register" method="POST">
+              <label for="reg-username">Username:</label>
+              <input type="text" id="reg-username" name="username" required>
+              <p>
+              <label for="reg-email">Email:</label>
+              <input type="email" id="reg-email" name="email" required>
+            </p><p>
+              <label for="reg-number">phone number:</label>
+              <input type="number" id="reg-number" name="phone number " required>
+            </p><p>
+              <label for="reg-address">Address:</label>
+              <input type="address" id="reg-address" name="address" required>
+            </p><p>
+
+              <label for="reg-password">Password:</label>
+              <input type="password" id="reg-password" name="password" required>
+            </p><P>
+              <button type="submit">Register</button>
+              
+              </P>
+          </form>
+          </div>
+</body>
+</html>
