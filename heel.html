@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif, 'Times New Roman';
+            line-height: 1.6;
+            color: #333;
+            background-color: lavenderblush;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        figcaption {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        figure {
+            text-align: center;
+            margin: 0;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        figure:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(207, 117, 144, 0.2);
+        }
+        figure img {
+            width: 50%;
+            border-radius: 10px;
+            transition: filter 0.3s ease;
+        }
+        figure img:hover {
+            filter: brightness(85%);
+        }
+        figure figcaption {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        figure a {
+            display: block;
+            margin-top: 10px;
+            color: white;
+            background-color: #007BFF;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        figure a:hover {
+            background-color: #0056b3;
+        }
+        .image {
+            align-items: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(132, 64, 196);
+            color: rgb(255, 238, 5);
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h2 class="image">Our Collection</h2>
+    <div class="search-block">
+        <input type="text" placeholder="Search for your choices...">
+        <img src="C:\Users\ASUS\Downloads\search-icon.png" alt="search-icon">
+    </div>
+    
+
+    <div class="grid-container">
+        <figure>
+            <img src="https://s.alicdn.com/@sc04/kf/He10ec6f5ea0f48fd9d8f464af9e75fd5C.jpg_720x720q50.jpg" alt="">
+            <figcaption>$25.00</figcaption>
+            <a href="buy.html" target="_blank">Buy Now</a>
+        </figure>
+        <figure>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0UeibhB1-WoPPsZYA7U4rm4lPUoAHpXlS4g&s" alt="">
+            <figcaption>$30.00</figcaption>
+            <a href="" target="_blank">Buy Now</a>
+        </figure>
+        <figure>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2YvrRdbw_Gdq3jSM0zukZoy41VrOclrPidA&s"width="20%" alt="">
+            <figcaption>$20.00</figcaption>
+            <a href="https://example.com/product3" target="_blank">Buy Now</a>
+        </figure>
+        <figure>
+            <img src="https://s.alicdn.com/@sc04/kf/Hde55bf2526c749c081030a03833c6332Z.jpg_300x300.jpg" alt="">
+            <figcaption>$25.00</figcaption>
+            <a href="https://example.com/product4" target="_blank">Buy Now</a>
+        </figure>
+        <figure>
+            <img src="https://s.alicdn.com/@sc04/kf/H1e3151d1ddf84199bb52b766372493b42.jpg_720x720q50.jpg" alt="">
+            <figcaption>$30.00</figcaption>
+            <a href="https://example.com/product5" target="_blank">Buy Now</a>
+        </figure>
+        <figure>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTglWfPwfjNFF8xSs2PoTfmyaRSG9rgwr2nS9pRk2gJXqtNaw7KHdk1rQsv2gotqju9u98&usqp=CAU" width="20%"alt="">
+            <figcaption>$20.00</figcaption>
+            <a href="https://example.com/product6" target="_blank">Buy Now</a>
+        </figure>
+</p>
+</body>
+</html>
