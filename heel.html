@@ -68,10 +68,26 @@
             padding: 10px;
             text-align: center;
         }
+        .cart-link {
+            text-align: right;
+            padding: 10px 20px;
+        }
+        .cart-link a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .cart-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
 
     </style>
 </head>
 <body>
+    <div class="cart-link">
+        <a href="cart.html">Go to Cart</a>
+    </div>
     <h2 class="image">Our Collection</h2>
     <div class="search-block">
         <input type="text" placeholder="Search for your choices...">
@@ -84,32 +100,46 @@
             <img src="https://s.alicdn.com/@sc04/kf/He10ec6f5ea0f48fd9d8f464af9e75fd5C.jpg_720x720q50.jpg" alt="">
             <figcaption>$25.00</figcaption>
             <a href="buy.html" target="_blank">Buy Now</a>
+            <button onclick="addToCart('Product 1', 25)">Add to Cart</button>
         </figure>
         <figure>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0UeibhB1-WoPPsZYA7U4rm4lPUoAHpXlS4g&s" alt="">
             <figcaption>$30.00</figcaption>
             <a href="" target="_blank">Buy Now</a>
+            <button onclick="addToCart('Product 2', 30)">Add to Cart</button>
         </figure>
         <figure>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2YvrRdbw_Gdq3jSM0zukZoy41VrOclrPidA&s"width="20%" alt="">
             <figcaption>$20.00</figcaption>
             <a href="https://example.com/product3" target="_blank">Buy Now</a>
+            <button onclick="addToCart('Product 3', 20)">Add to Cart</button>
         </figure>
         <figure>
             <img src="https://s.alicdn.com/@sc04/kf/Hde55bf2526c749c081030a03833c6332Z.jpg_300x300.jpg" alt="">
             <figcaption>$25.00</figcaption>
             <a href="https://example.com/product4" target="_blank">Buy Now</a>
+            <button onclick="addToCart('Product 4', 25)">Add to Cart</button>
         </figure>
         <figure>
             <img src="https://s.alicdn.com/@sc04/kf/H1e3151d1ddf84199bb52b766372493b42.jpg_720x720q50.jpg" alt="">
             <figcaption>$30.00</figcaption>
             <a href="https://example.com/product5" target="_blank">Buy Now</a>
+            <button onclick="addToCart('Product 5', 30)">Add to Cart</button>
         </figure>
         <figure>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTglWfPwfjNFF8xSs2PoTfmyaRSG9rgwr2nS9pRk2gJXqtNaw7KHdk1rQsv2gotqju9u98&usqp=CAU" width="20%"alt="">
             <figcaption>$20.00</figcaption>
             <a href="https://example.com/product6" target="_blank">Buy Now</a>
+            <button onclick="addToCart('Product 6', 20)">Add to Cart</button>
         </figure>
 </p>
+<script>
+    function addToCart(productName, productPrice) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ name: productName, price: productPrice });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(productName + ' added to cart!');
+    }
+</script>
 </body>
 </html>
