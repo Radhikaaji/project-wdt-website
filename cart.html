@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: lavenderblush;
+            color: #333;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: right;
+            padding: 10px;
+        }
+        .buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            margin: 5px;
+        }
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Cart</h2>
+    <div id="cart-content"></div>
+    <div class="buttons">
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="proceedToPayment()">Proceed to Payment</button>
+    </div>
+
+    <script>
+        function proceedToPayment() {
+            // Replace 'payment.html' with the actual link to your payment page
+            const paymentPageLink = "buy.html";
+            window.location.href = paymentPageLink;
+        }
+    
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartContent = '<table><tr><th>Product</th><th>Price</th></tr>';
+            let total = 0;
+    
+            if (cart.length === 0) {
+                cartContent = '<p>Your cart is empty!</p>';
+            } else {
+                cart.forEach(item => {
+                    cartContent += `<tr><td>${item.name}</td><td>$${item.price.toFixed(2)}</td></tr>`;
+                    total += item.price;
+                });
+                cartContent += `</table><div class="total">Total: $${total.toFixed(2)}</div>`;
+            }
+            document.getElementById('cart-content').innerHTML = cartContent;
+        }
+    
+        function clearCart() {
+            localStorage.removeItem('cart');
+            alert('Cart cleared!');
+            loadCart();
+        }
+    
+        // Load cart on page load
+        loadCart();
+    </script>
+    
+</body>
+</html>
