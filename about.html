@@ -3,32 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Our Founder</title>
     <style>
-        .about{
-      font-family: 'Times New Roman', Times, serif;
-      font-style: italic;
-      font-size: medium;
-      text-align: center;
-      color: rgb(3, 3, 0);
-      
-  }
-  body{
-    background-color: lavender;
-  }
-  p{
-    background-color:bisque;
-  }
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, lavender, white);
+            color:antiquewhite;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .about {
+            background: rgba(159, 16, 49, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .about h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #e4ec71;
+            text-transform: uppercase;
+        }
+
+        .about img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 5px solid #4a148c;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            background-color: rgba(255, 228, 196, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .about span {
+            font-weight: bold;
+            color: #4a148c;
+        }
+
+        .about div {
+            margin-top: 10px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about {
+                padding: 15px;
+            }
+
+            .about h1 {
+                font-size: 1.8rem;
+            }
+
+            .about img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .about p {
+                font-size: 1rem;
+            }
+            .t{
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color: antiquewhite;
+            }
+        }
     </style>
 </head>
-<body>
-     
+<body style="background-image: url('https://cdn.pixabay.com/photo/2023/02/01/21/40/pink-7761356_1280.png');">
     <div class="about">
         <h1>Our Founder</h1>
-        <img src="C:\Users\ASUS\Downloads\WhatsApp Image 2024-10-01 at 12.36.29 AM.jpeg" width="15%" alt="">
-        <p>MISS.RADHIKA VARMA</p>At the heart of Rshe collections is Radhika Varma, a founder who believes that the little things make life beautiful. She is a beauty Influencer & Content creator .With a deep love for handmade, high-quality products, She has built a brand that transforms simple accessories and home essentials into something truly special.
-        Her journey is an inspiration for those who dare to dream big and work tirelessly to turn those dreams into reality.
-      
+        <img src="WhatsApp Image 2024-10-01 at 12.36.29 AM.jpeg" alt="Founder Image">
+        <p><span>MISS. RADHIKA VARMA</span></p>
+        <div class="t">At the heart of G&G Collections is Radhika Varma, a founder who believes that the little things make life beautiful. She is a beauty influencer & content creator. With a deep love for handmade, high-quality products, she has built a brand that transforms simple accessories and home essentials into something truly special.</div>
+        <div class="t">Her journey is an inspiration for those who dare to dream big and work tirelessly to turn those dreams into reality.</div>
     </div>
 </body>
 </html>
