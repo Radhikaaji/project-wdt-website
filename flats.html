@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product Collection</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif, 'Times New Roman';
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Arial', sans-serif;
             background-color: lavenderblush;
         }
         .grid-container {
@@ -17,99 +15,95 @@
             gap: 20px;
             padding: 20px;
         }
-        
-        figcaption {
-            margin-top: 10px;
-            font-weight: bold;
-        }
         figure {
             text-align: center;
-            margin: 0;
             border: 1px solid #ddd;
             padding: 10px;
             border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        figure:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(207, 117, 144, 0.2);
         }
         figure img {
             width: 50%;
             border-radius: 10px;
-            transition: filter 0.3s ease;
         }
-        figure img:hover {
-            filter: brightness(85%);
-        }
-        figure figcaption {
-            margin-top: 10px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        figure a {
+        figure a, figure button {
             display: block;
             margin-top: 10px;
             color: white;
             background-color: #007BFF;
             padding: 10px;
             text-decoration: none;
+            border: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            cursor: pointer;
         }
-        figure a:hover {
+        figure a:hover, figure button:hover {
             background-color: #0056b3;
         }
-        .image {
-            align-items: center;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            background-color: rgb(132, 64, 196);
-            color: rgb(255, 238, 5);
-            padding: 10px;
-            text-align: center;
+        .cart-link {
+            text-align: right;
+            padding: 10px 20px;
         }
-
+        .cart-link a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .cart-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <h2 class="image">Our Collection</h2>
-    <div class="search-block">
-        <input type="text" placeholder="Search for your choices...">
-        <img src="C:\Users\ASUS\Downloads\search-icon.png" alt="search-icon">
+    <div class="cart-link">
+        <a href="cart.html">Go to Cart</a>
     </div>
-    
-
+    <h2 style="text-align: center;">Our Collection</h2>
     <div class="grid-container">
         <figure>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4eVLDSECMO8qhtWMwg3J-nsPjVV_QIEE9Ag&s" alt="">
-            <figcaption>$25.00</figcaption>
+            <figcaption>Price: $25.00</figcaption>
             <a href="buy.html" target="_blank">Buy Now</a>
+            <button onclick="addToCart('Product 1', 25)">Add to Cart</button>
         </figure>
         <figure>
             <img src="https://images.meesho.com/images/products/207880662/9tndx_512.webp" alt="">
-            <figcaption>$30.00</figcaption>
+            <figcaption>Price: $30.00</figcaption>
             <a href="buy.html" target="_blank">Buy Now</a>
+            <button onclick="addToCart('Product 2', 30)">Add to Cart</button>
         </figure>
         <figure>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBqYc558pHQa79aWK3HzC-_XZF9QDm2mAMM3lkohq-B3p5n-m5NDx5GS-EEL9l9RcZaPU&usqp=CAU"width="20%" alt="">
-            <figcaption>$20.00</figcaption>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBqYc558pHQa79aWK3HzC-_XZF9QDm2mAMM3lkohq-B3p5n-m5NDx5GS-EEL9l9RcZaPU&usqp=CAU" alt="">
+            <figcaption>Price: $20.00</figcaption>
             <a href="buy.html" target="_blank">Buy Now</a>
+            <button onclick="addToCart('Product 3', 20)">Add to Cart</button>
         </figure>
         <figure>
             <img src="https://images.meesho.com/images/products/207880662/ueciy_512.webp" alt="">
-            <figcaption>$25.00</figcaption>
-            <a href="buy.html" target="_blank">Buy Now</a>
-        </figure>
-        <figure>
-            <img src="https://i.pinimg.com/236x/51/42/b3/5142b3e74d1e4ca3256fae75fe9b0524.jpg" alt="">
-            <figcaption>$30.00</figcaption>
-            <a href="buy.html" target="_blank">Buy Now</a>
-        </figure>
-        <figure>
-            <img src="https://images.meesho.com/images/products/358900757/nean8_512.jpg" width="20%"alt="">
             <figcaption>$20.00</figcaption>
             <a href="buy.html" target="_blank">Buy Now</a>
+            <button onclick="addToCart('Product 4', 20)">Add to Cart</button>
         </figure>
-</p>
+        <figure>
+            <img src="https://images.meesho.com/images/products/358900757/nean8_512.jpg" width="20%" alt="">
+            <figcaption>$20.00</figcaption>
+            <a href="buy.html" target="_blank">Buy Now</a>
+           
+            <button onclick="addToCart('Product 5', 20)">Add to Cart</button>
+        </figure>
+        <figure>
+            <img src="https://images.meesho.com/images/products/358900757/nean8_512.jpg" width="20%" alt="">
+            <figcaption>Price: $20.00</figcaption>
+            <a href="buy.html" target="_blank">Buy Now</a>
+            <button onclick="addToCart('Product 6', 20)">Add to Cart</button>
+        </figure>
+    </div>
+    <script>
+        function addToCart(productName, productPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: productName, price: productPrice });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(productName + ' added to cart!');
+        }
+    </script>
 </body>
 </html>
