@@ -5,44 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-  body {
-    font-family: 'Arial', sans-serif,times new roman;
-    line-height: 1.6;
-    color: #333;
-    background-color: lavenderblush;
-}
-#box{
-    float:left;
-    margin: 15px;
-    width: 200px;
-    height: 200px;
-    border-radius: 30px;
-    background-color: #d82499;
-    padding:1em ;
-    border-color: rgb(18, 212, 212);
-}
-.image{
-    align-items: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: rgb(132, 64, 196);
-    color: rgb(255, 238, 5);
-}
+  
 
+body {
+            font-family: 'Arial', sans-serif, 'Times New Roman';
+            line-height: 1.6;
+            color: #333;
+            background-color: lavenderblush;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        figcaption {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        figure {
+            text-align: center;
+            margin: 0;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        figure:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(207, 117, 144, 0.2);
+        }
+        figure img {
+            width: 50%;
+            border-radius: 10px;
+            transition: filter 0.3s ease;
+        }
+        figure img:hover {
+            filter: brightness(85%);
+        }
+        figure figcaption {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        figure a {
+            display: block;
+            margin-top: 10px;
+            color: white;
+            background-color: #007BFF;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        figure a:hover {
+            background-color: #0056b3;
+        }
+        .image {
+            align-items: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(132, 64, 196);
+            color: rgb(255, 238, 5);
+            padding: 10px;
+            text-align: center;
+        }
+        .cart-link {
+            text-align: right;
+            padding: 10px 20px;
+        }
+        .cart-link a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .cart-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <h2 class="image">Our Collection </h2>
+    <div class="cart-link">
+        <a href="cart.html">Go to Cart</a>
+    </div>
+    <h2 class="image">Our Collection</h2>
     <div class="search-block">
-                <input type="text" placeholder="Search for your choices...">
-                <img src="C:\Users\ASUS\Downloads\search-icon.png" alt="search-icon">
-            </div>
+        <input type="text" placeholder="Search for your choices...">
+        <img src="C:\Users\ASUS\Downloads\search-icon.png" alt="search-icon">
+    </div>
         
-            
-        
+    <div class="grid-container"> 
+        <figure>
          <img id="box" src="https://i.pinimg.com/736x/33/c3/19/33c31911ceaac0927efe9478bbf1d241.jpg" width="15%" alt="">
- <img id="box" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmkHYWBSPBj1KiGS6g5fTbVQejRunqb1tK1g&s" width="15%" alt=""></img>
-<img id="box" src="https://i.pinimg.com/736x/15/0f/5f/150f5f017585b2ce70eacd024ac1e056.jpg" width="15%" alt=""></img>
-
+         <figcaption>$25.00</figcaption>
+         <a href="buy.html" target="_blank">Buy Now</a>
+         <button onclick="addToCart('Product 1', 25)">Add to Cart</button>
+   </figure><figure>
+         <img id="box" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmkHYWBSPBj1KiGS6g5fTbVQejRunqb1tK1g&s" width="15%" alt=""></img>
+         <figcaption>$25.00</figcaption>
+         <a href="buy.html" target="_blank">Buy Now</a>
+         <button onclick="addToCart('Product 2', 25)">Add to Cart</button>
+   </figure><figure>
+         <img id="box" src="https://i.pinimg.com/736x/15/0f/5f/150f5f017585b2ce70eacd024ac1e056.jpg" width="15%" alt=""></img>
+         <figcaption>$25.00</figcaption>
+         <a href="buy.html" target="_blank">Buy Now</a>
+         <button onclick="addToCart('Product 3', 25)">Add to Cart</button>
+   </figure>
+    </div>
+    <script>
+        function addToCart(productName, productPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: productName, price: productPrice });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(productName + ' added to cart!');
+        }
+    </script>
 
 </body>
 </html>
