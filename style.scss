@@ -180,4 +180,28 @@ p.tagline {
       border-radius: 2px;
       background-color: rgb(232, 135, 195);
       padding: 1em;
+} 
+@media (min-width: 768px) {
+    #logo {
+        width: 20%;
+    }
+
+    #note {
+        display: inline-block;
+        width: 15%;
+    }
+
+    .product-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-gallery {
+        grid-template-columns: repeat(4, 1fr); /* Four columns on desktops */
+    }
+
+    .page {
+        gap: 20px;
+    }
 }
