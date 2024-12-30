@@ -275,7 +275,7 @@ footer {
 }
 
 /* Styles for larger screens */
-@media (min-width: 768px) {
+@media (min-width: 320px) {
     #logo {
         width: 20%;
     }
@@ -290,7 +290,7 @@ footer {
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 320px) {
     .product-gallery {
         grid-template-columns: repeat(4, 1fr); /* Four columns on desktops */
     }
