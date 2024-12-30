@@ -196,4 +196,119 @@ p.tagline {
   border-radius: 2px;
   background-color: rgb(232, 135, 195);
   padding: 1em;
+}
+
+/* Base styles for mobile-first design */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+#logo {
+  width: 50%; /* Adjust logo size for smaller screens */
+  margin: 0 auto;
+  display: block;
+}
+
+#note {
+  display: none; /* Hide the note image on smaller screens */
+}
+
+#typography h1 {
+  font-size: 1.8rem;
+}
+
+#typography .tagline {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.description {
+  font-size: 1rem;
+  padding: 10px;
+  color: #666;
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.nav-box {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.clickable-box1, .clickable-box2 {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 90%;
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout for mobile */
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-price {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Styles for larger screens */
+@media (min-width: 60px) {
+  #logo {
+    width: 20%;
+  }
+  #note {
+    display: inline-block;
+    width: 15%;
+  }
+  .product-gallery {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+  }
+}
+@media (min-width: 1024px) {
+  .product-gallery {
+    grid-template-columns: repeat(4, 1fr); /* Four columns on desktops */
+  }
+  .page {
+    gap: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
