@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Basic body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/yellow-blue-abstract-creative-background-blue-abstract-background-geometric-background_481527-27945.jpg?semt=ais_hybrid');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .login {
+          display: flex;
+          flex-direction: column;
+
+        }
+
+        h1 {
+            color: #ff6f61;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #ff6f61;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        /* Form container */
+        .container, .container2 {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 40px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .container2 {
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 1.1em;
+            color: #333;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="email"], input[type="password"], input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: #ff6f61;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e05e4f;
+        }
+
+        p {
+            text-align: center;
+            color: #fff;
+            font-size: 1.1em;
+        }
+
+        /* Adding some responsive design */
+        @media (max-width: 768px) {
+            .container, .container2 {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h1, h2 {
+                font-size: 2em;
+            }
+
+            input[type="email"], input[type="password"], input[type="text"], input[type="number"] {
+                font-size: 0.9em;
+            }
+
+            button {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  
+<p>
+ 
+  <div class="container2">
+     <h2>Register</h2>
+    <form id="register-form">
+      <label for="reg-username">Username:</label>
+      <input type="text" id="reg-username" name="username" required>
+
+      <label for="reg-email">Email:</label>
+      <input type="email" id="reg-email" name="email" required>
+
+      <label for="reg-number">Phone Number:</label>
+      <input type="number" id="reg-number" name="phone-number" required>
+
+      <label for="reg-address">Address:</label>
+      <input type="text" id="reg-address" name="address" required>
+
+      <label for="reg-password">Password:</label>
+      <input type="password" id="reg-password" name="password" required>
+
+      <button onclick="window.location.href='index.html';" type="submit">Register</button>
+    </form>
+  </div>
+</div>
+  <script>
+    // Function to fetch users from local storage
+    function getUsersFromLocalStorage() {
+      const users = localStorage.getItem('users');
+      return users ? JSON.parse(users) : [];
+    }
+
+    // Function to save users to local storage
+    function saveUsersToLocalStorage(users) {
+      localStorage.setItem('users', JSON.stringify(users));
+    }
+
+    // Handle registration
+    document.getElementById('register-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById('reg-username').value;
+      const email = document.getElementById('reg-email').value;
+      const phoneNumber = document.getElementById('reg-number').value;
+      const address = document.getElementById('reg-address').value;
+      const password = document.getElementById('reg-password').value;
+
+      // Get existing users from local storage
+      const users = getUsersFromLocalStorage();
+
+      // Check if user already exists
+      const userExists = users.some(user => user.email === email);
+      if (userExists) {
+        alert('User already exists! Please use a different email.');
+        return;
+      }
+
+      // Add new user to the array
+      users.push({ username, email, phoneNumber, address, password });
+
+      // Save updated users array to local storage
+      saveUsersToLocalStorage(users);
+
+      alert('Registration successful!');
+      document.getElementById('register-form').reset();
+    });
+
+    // Handle login
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+
+      // Get existing users from local storage
+      const users = getUsersFromLocalStorage();
+
+      // Validate user credentials
+      const user = users.find(user => user.email === email && user.password === password);
+      if (user) {
+        alert(`Welcome back, ${user.username}!`);
+      } else {
+        alert('Invalid email or password. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>
